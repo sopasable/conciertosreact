@@ -1,0 +1,18 @@
+//Tipografia
+$princ_font: 'Monserrat',sans-serif;
+
+//IMPORTANTE El _ en _var sirve para indicar a sass que este archivo pertenece a otro (No crea un css nuevo)
+
+$verde: #4CB8B3; //definir "Var" en css pero para scss
+$rosa: #F53756;
+$amarillo: #FEF46D;
+$morado: #752F97;
+$negro: #0000;
+$blanco: #FFFF;
+
+//Media Queries
+$telefono: 490px;
+$tablet: 768px;
+$desktop: 992px;
+$desktopXL: 1200px;
+

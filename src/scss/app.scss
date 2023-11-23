@@ -1,0 +1,9 @@
+// @import "var";//Import es importacion global para todos los archivos
+// @use 'estilos'; /  Importa un módulo completo y todas sus variables, mixins y funciones. Además, crea un módulo privado que no puede ser accedido desde otros módulos a menos que sea explícitamente exportado.
+// @forward 'utilidades' with $color-primario, %boton-estilo;// Permite reexportar selectivamente las variables, mixins y funciones de un módulo a otro, lo que facilita el acceso a ciertos elementos de un módulo a otro. 
+//Forward debe tener un archivo scss base (Como index)
+//Si se pone _archivo scss lo reconoce como un archivo que pertenece a otro (Para evitar crear mas de un css al momento de compilarlo)
+
+//Use para utilizar las carpetas donde se encuentran los archivos scss (No de forma global como con import)
+@use 'base';
+@use 'layout';

@@ -1,0 +1,73 @@
+//>>[Mixin]: es una pieza de codigo de css que se puede reutilizar
+//@ se le conoce en sass como directivas
+/* 
+////////////////////////////EJEMPLO MIXIN basico
+--------------- _mixins.scss
+@mixin heading{ //prueba mixin, se complementa en App.js
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: black;
+}
+
+--------------- html
+<h1 class="prueba">probando mixin</h1>
+<h1 class="texto">probando mixin 2</h1>
+
+--------------- archivo.scss que lo utiliza
+@use 'base/mixins' as m;
+
+//Lo puedes usar para dos clases distintas y aplicar el mismo estilo
+.prueba{
+    @include m.heading;
+}
+.texto{
+    @include m.heading;
+}
+
+//////////////////// EJEMPLO Mixin con parametros
+------------- _mixins.scss
+@use 'variables' as v; //agregarlo para utilizar variables
+@mixing heading($color:blue, $border-radius: false){ //toma blue por default
+    color: $color;
+    @if $border-radius{
+        border-radius:1rem;
+    }
+}
+
+--------------- archivo.scss que lo utiliza
+@use 'base/mixins' as m;
+.prueba{
+    @include m.heading(v.$amarillo,true);
+}
+.texto{
+    @include m.heading; //color en azul y sin borde
+}
+
+*/
+
+//mixins con media querie
+@use 'var' as v;
+
+@mixin telefono{
+    @media(min-width:v.$telefono){
+        @content; //se utiliza para agregar lineas css en otro scss
+    }
+}
+
+@mixin tablet{
+    @media(min-width:v.$tablet){
+        @content; //se utiliza para agregar lineas css en otro scss
+    }
+}
+
+@mixin desktop{
+    @media(min-width:v.$desktop){
+        @content; //se utiliza para agregar lineas css en otro scss
+    }
+}
+
+@mixin desktop{
+    @media(min-width:v.$desktopXL){
+        @content; //se utiliza para agregar lineas css en otro scss
+    }
+}

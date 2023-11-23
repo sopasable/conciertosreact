@@ -1,0 +1,4 @@
+npm run dev //Correr watch
+npm run css //Actualizar estilos con sass
+npm start //Arrancar proyecto react
+CTRL + C //Detener proyecto (ejecutar en consola donde se arranco react)
